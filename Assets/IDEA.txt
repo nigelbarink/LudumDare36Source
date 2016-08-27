@@ -15,14 +15,18 @@ Side ways strategy.
 
 Features:
 
-- make characters attack 
--4 bosses 
+
+- fix spawn point
+- new art
+- 4 bosses 
+- make a health indicator
 - key bind move , selector and camera !!
--remove attack button ??
--create more characters 
--get a background 
--audio
--animations
+- remove attack button ??
+- create more characters 
+- get a background 
+- multi Unit selection 
+- audio
+- animations
  
 
  
@@ -34,13 +38,13 @@ X => center camera at base
 escape => exit out of selector 
 
 Done :
--lock camera on y axis 
--Side view
--enemy waves
+- lock camera on y axis 
+- Side view
+- enemy waves
 - shop 
--movement "character"
--Upgrades
-
+- movement "character"
+- Upgrades
 - camera follows selected character automatically
-
+- change selected unit color 
+- make characters attack 
 

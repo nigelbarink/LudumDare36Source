@@ -24,9 +24,12 @@ public class Movement : MonoBehaviour {
 		checkselector();
 
 		if (selected != Camera.main.gameObject) {
+			selected.GetComponent<SpriteRenderer> ().color = Color.red;
+			/*
 			float posc = selected.transform.position.x;
 			Camera.main.transform.position = new Vector3 (posc,Camera.main.transform.position.y,Camera.main.transform.position.z) ;
-		}
+			*/
+		} 
 
 
 		if (selected == Camera.main.gameObject) {
@@ -43,6 +46,10 @@ public class Movement : MonoBehaviour {
 		if (Input.GetKey (KeyCode.Escape)&& enabled) {
 			enabled = false;
 			warning.enabled = false;
+			SpriteRenderer rend = selected.GetComponent<SpriteRenderer> ();
+			if (rend) {
+				rend.color = Color.white;
+			}
 		}
 		if (Input.GetMouseButton (0) && enabled ) {
 
@@ -100,7 +107,12 @@ public class Movement : MonoBehaviour {
 		enabled = true;
 	}
 	public void selectCamera (){
+		SpriteRenderer rend = selected.GetComponent<SpriteRenderer> ();
+		if (rend) {
+			rend.color = Color.white;
+		}
 		selected = Camera.main.gameObject;
+
 	}
 	
 	}

@@ -13,7 +13,9 @@ public class Unit : MonoBehaviour {
 		if (moving) {
 			transform.position += new Vector3 (amt, 0, 0) * Time.deltaTime;
 		}
-
+		if (health <= 0) {
+			Destroy (this.gameObject);
+		}
 
 		}
 
@@ -26,16 +28,19 @@ public class Unit : MonoBehaviour {
 	}
 	public void attack (){
 		// find player within a certain range !
-		Collider2D [] others = Physics2D.OverlapCircleAll (transform.position + new Vector3 (0,0,1) ,range , this.gameObject.layer);
+		Collider2D [] others = Physics2D.OverlapCircleAll (transform.position + new Vector3 (0,0,1) ,range , 1 << LayerMask.NameToLayer("Enemy"));
 		Debug.Log (others.Length.ToString());
-		if (others.Length > 0) {
+		if  (others.Length > 0) {
 			foreach (Collider2D m in others){
 				Debug.Log ("Attack!");
-				m.GetComponent<Unit> ().health -= power / (others.Length - 8);
+				m.GetComponent<Unit> ().health -= power  ;
 			}
-		}else{
-			Debug.Log ("no Enemies near!");
 		}
+		if (others.Length > 0) {
+			attack ();
+		}
+			Debug.Log ("no Enemies near!");
+	
 	}
 	public void fallback (){
 		amt = -amt;
@@ -47,7 +52,9 @@ public class Unit : MonoBehaviour {
 
 	public void OnTriggerEnter2D (Collider2D other ){
 		if (other.gameObject.name != "ground") {
-			moving = false;
+			if (moving) {
+				moving = false;
+			}
 			attack ();
 		} else {
 			return;
