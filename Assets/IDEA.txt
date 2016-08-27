@@ -5,3 +5,34 @@
 ||					       ||
 ||=============================================||
 
+Definition of theme:
+old \ very distant historical machinary and devices 
+
+Game idea:
+Defeat enemy with ?_magical_? ancient technology also upgrade your ancient power <== BEST IDEA YET 
+
+Side ways strategy. 
+
+Features:
+
+- camera follows selected character automatically
+-movement "character"
+-Upgrades
+-4 bosses 
+-enemy waves
+
+ 
+Controls :
+
+Left mouse click ==> select character 
+W A S D ==> move character or move camera 
+
+Done :
+-lock camera on y axis 
+-Side view
+
+
+
+
+
+
