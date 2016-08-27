@@ -32,7 +32,7 @@ public class spawnpoint : MonoBehaviour {
 			miniontime = miniontime - 0.01f;
 		}
 
-		Debug.Log ("time left: " + (int) Time + " Minion Time: " + (int) miniontime);
+		//Debug.Log ("time left: " + (int) Time + " Minion Time: " + (int) miniontime);
 		if (Time <= 0 ) {
 			pick_wave ();
 
@@ -84,10 +84,15 @@ public class spawnpoint : MonoBehaviour {
 
 				if (miniontime <= 0) {
 					for (int x = 0; x < amt; x++) {
-						Debug.Log ("Spawns enemy minions!");
+						//Debug.Log ("Spawns enemy minions!");
 						Vector3 somevector = transform.position + new Vector3 (Random.Range (-8, -16), 0, 0);
 						GameObject go = (GameObject)GameObject.Instantiate (Machinary [0], somevector, Quaternion.identity);
 						go.name = go.name + "_" + x;
+						Unit u = go.AddComponent<Unit> ();
+						u.amt = 37 * wave + 1 ^ 5 / (wave * 2 + 1 );
+						u.power = 45 * wave + 1;
+						u.health = 100 * wave + 50;
+
 					}
 
 					miniontime = resetminiontime;
@@ -107,7 +112,7 @@ public class spawnpoint : MonoBehaviour {
 
 
 	void spawnboss (int boss ){
-		Debug.Log ("spawns boss!");
+		//Debug.Log ("spawns boss!");
 		Time = reset_time;
 		boss++;
 	}

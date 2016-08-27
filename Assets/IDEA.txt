@@ -15,24 +15,32 @@ Side ways strategy.
 
 Features:
 
-- camera follows selected character automatically
--movement "character"
--Upgrades
+- make characters attack 
 -4 bosses 
--enemy waves
+- key bind move , selector and camera !!
+-remove attack button ??
+-create more characters 
+-get a background 
+-audio
+-animations
+ 
 
  
 Controls :
 
 Left mouse click ==> select character 
 W A S D ==> move character or move camera 
+X => center camera at base 
+escape => exit out of selector 
 
 Done :
 -lock camera on y axis 
 -Side view
+-enemy waves
+- shop 
+-movement "character"
+-Upgrades
 
-
-
-
+- camera follows selected character automatically
 
 
