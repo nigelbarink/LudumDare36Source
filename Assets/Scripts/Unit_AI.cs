@@ -3,7 +3,7 @@ using System.Collections;
 [RequireComponent (typeof(healthbar))]
 public class Unit_AI : MonoBehaviour {
 	
-	public int amt ;
+	public int amt = 8;
 	public float health;
 	public float power;
 	public float range = 8 ;
@@ -12,16 +12,23 @@ public class Unit_AI : MonoBehaviour {
 	public void Update(){
 		Collider2D [] others = Physics2D.OverlapCircleAll (transform.position + new Vector3 (0,0,1) ,range , 1 << LayerMask.NameToLayer("Player"));
 		Collider2D [] otherss = Physics2D.OverlapCircleAll (transform.position + new Vector3 (0,0,1) ,range , 1 << LayerMask.NameToLayer("Enemy"));
-
-		if  (others.Length <= 0 && otherss.Length <= 0) {
+		//Debug.Log (others.Length.ToString () + " , " + otherss.Length.ToString ());
+		if  (others.Length <= 0 && otherss.Length <= 0 ) {
 			transform.position += new Vector3 (-amt, 0, 0) * Time.deltaTime;
 		}
 		else if (others.Length > 0 || otherss.Length > 0 ){
 			if (others.Length > 0) {
 				attack (others);
 			} else if (otherss.Length > 0) {
+				foreach(Collider2D anom in otherss ){
+					if (anom.gameObject == this.gameObject) {
+						transform.position += new Vector3 (-amt, 0, 0) * Time.deltaTime;
+						return;
+					}
+				}
 				return;
 			} else {
+				transform.position += new Vector3 (-amt, 0, 0) * Time.deltaTime;
 			
 				return;	
 			}
@@ -30,6 +37,7 @@ public class Unit_AI : MonoBehaviour {
 			}
 
 		if (health <= 0) {
+			GameObject.Find ("Manager").GetComponent<Manager> ().addExp (20);
 			Destroy (this.gameObject);
 		}
 

@@ -14,11 +14,10 @@ Defeat enemy with ?_magical_? ancient technology also upgrade your ancient power
 Side ways strategy. 
 
 Features:
-
-- make spawn random places
-- balance characters (AKA nerf range of units)
+- experience 
 - create more characters 
-- 4 bosses 
+- balance characters (AKA nerf range of units)
+- 1 boss (Atleast) 
 - new art
 - audio
 - animations
@@ -31,6 +30,15 @@ Left mouse click ==> select character
 W A S D ==> move character or move camera 
 X => center camera at base 
 escape => exit out of selector 
+
+
+
+Scrap Idea :
+- Capture Area's
+
+
+
+
 
 Done :
 - lock camera on y axis 
@@ -49,5 +57,5 @@ Done :
 - make a health indicator
 - enemy AI
 - multi Unit selection <== probably one of the next things todo!
-
 - make individual units recognisable
+- make spawn random places

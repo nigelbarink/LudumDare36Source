@@ -37,6 +37,7 @@ public class Movement : MonoBehaviour {
 			Vector3 pos = selected[0].transform.position;
 			float X = Input.GetAxis ("Horizontal") * speed;
 			pos += new Vector3 (X ,0,0)  * Time.deltaTime;
+			pos.x =  Mathf.Clamp (pos.x, -24.7f, 3.88f);
 			selected[0].transform.position = pos ;
 		}
 		if (Input.GetKey (KeyCode.X)) {
@@ -44,7 +45,7 @@ public class Movement : MonoBehaviour {
 		}
 
 		if (Input.GetKey (KeyCode.W)) {
-			if (selected.Count == null) {
+			if (selected.Count == 0) {
 				Debug.LogError ("contains no units !");
 				return;
 			}

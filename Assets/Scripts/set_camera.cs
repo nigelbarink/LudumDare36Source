@@ -9,7 +9,7 @@ public class set_camera : MonoBehaviour {
 		if (gameObject.transform.parent.tag == "Enemy") {
 			transform.localScale = new Vector3 (0.1f, 0.1f, 0f);
 		} else {
-			transform.localScale = new Vector3 (0.03f, 0.03f, 0f);
+			transform.localScale = new Vector3 (0.1f, 0.1f, 0f);
 
 		}
 

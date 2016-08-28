@@ -16,7 +16,6 @@ public class spawnpoint : MonoBehaviour {
 	float miniontime = 5f;
 	float resetminiontime = 5f;
 
-	int perUnits = 0;
 	//TODO: implement a difficulty grade from 0 being easy to 1 being extremly deadly!
 	float difficulty; 
 
@@ -44,16 +43,19 @@ public class spawnpoint : MonoBehaviour {
 		switch (wave) {
 		case 0:
 			Debug.Log ("Wave 0");
-			spawn_wave (2, 2);
+			spawn_wave (1, 1);
+			spawn_wave (2, 0, true);
 			break;
 
 		case 1:
 			Debug.Log ("Wave 1");
-			spawn_wave (5, 2);
+			spawn_wave (3, 0);
+			spawn_wave (2, 1, true);
 			break;
 		case 2:
 			Debug.Log ("Wave 2");
-			spawn_wave (8, 2);
+			spawn_wave (4, 0);
+			spawn_wave (3, 2, true);
 			break;
 		case 3:
 			Debug.Log ("Wave 3");
@@ -76,20 +78,21 @@ public class spawnpoint : MonoBehaviour {
 
 	}
 
-	void spawn_wave (int amt , int groups){
+	void spawn_wave (int amt , int TYPE, bool LAST = false ){
 		
-		if (miniontime <= 0 && perUnits < groups) {
+		if (miniontime <= 0 ) {
 				
-					Vector3 somevector = transform.position + new Vector3 (-1, 0, 0);
+			Vector3 somevector = transform.position + new Vector3 (Random.Range (-4,-8 ) , 0, 0);
 					for (int x = 0; x < amt; x++) {
 						Debug.Log ("Spawns enemy minions!");
 
 
-				GameObject.Instantiate ( units[0] , somevector, Quaternion.identity);
+				GameObject.Instantiate ( units[TYPE] , somevector, Quaternion.identity);
 
 					}
-
-					miniontime = resetminiontime;
+			if (LAST) {
+				miniontime = resetminiontime;
+			}
 			}
 			wave++;
 			Time = reset_time;

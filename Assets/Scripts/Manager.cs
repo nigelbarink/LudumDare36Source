@@ -5,11 +5,24 @@ using System.Collections;
 public class Manager : MonoBehaviour {
 
 	public Text txt;
-	public int credits = 0;
+	public Text tt;
+	int credits = 10;
+	int exp = 0;
 	public GameObject[] Units;
 	float clock = 4;
 	int minute = 4;
+
+	public void addCred (int amt ){
+		credits += amt;
+	}
+	public void addExp (int amt ){
+		exp += amt;
+	}
+	public void removeExp (int amt){
+		exp -= amt;
+	}
 	void Start(){
+
 		update_UI_CRED ();
 	}
 	void Update () {
@@ -28,9 +41,11 @@ public class Manager : MonoBehaviour {
 	}
 
 	void update_UI_CRED(){
-		if (txt != null ){
+		if (txt != null && tt != null ){
 			txt.text = "Credits: $ " + "<color=green> " + credits.ToString() + "</color>"  ;
+			tt.text = "Experience: " + "<color=purple>" + exp.ToString() + "</color>";
 		}
+
 
 	}
 
@@ -57,7 +72,8 @@ public class Manager : MonoBehaviour {
 
 	void Buy_Specified (int num , int amt ){
 			credits -= amt;
-		GameObject.Instantiate (Units [num], new Vector3 (0,0,0), Quaternion.identity);
+		Vector3 somevector = new Vector3 ((int)Random.Range(1,5) ,0,0) + this.transform.position ;
+		GameObject.Instantiate (Units [num], somevector, Quaternion.identity);
 
 
 	}
