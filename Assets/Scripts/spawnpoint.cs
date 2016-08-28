@@ -6,6 +6,8 @@ public class spawnpoint : MonoBehaviour {
 	int wave = 0 ;
 	int boss = 1 ;
 
+	public GameObject[] units ;
+
 	// big time
 	float Time = 4; // DEFAULT to 60
 	float reset_time = 30;
@@ -18,22 +20,18 @@ public class spawnpoint : MonoBehaviour {
 	//TODO: implement a difficulty grade from 0 being easy to 1 being extremly deadly!
 	float difficulty; 
 
-
-	public GameObject[] Machinary;
-
 	void Update () {
-		if (Machinary == null) {
+		if ( units == null) {
 			Debug.LogError ("there are no machinary found for this team to be instantiated !"); 
 			return;
 		}
-
 		Time =  Time - 0.01f;
 		if (Time <= 1f) {
 			miniontime = miniontime - 0.01f;
 		}
 
 		//Debug.Log ("time left: " + (int) Time + " Minion Time: " + (int) miniontime);
-		if (Time <= 0 ) {
+		if (Time <= 0 && miniontime <= 0) {
 			pick_wave ();
 
 		}
@@ -79,32 +77,23 @@ public class spawnpoint : MonoBehaviour {
 	}
 
 	void spawn_wave (int amt , int groups){
+		
 		if (miniontime <= 0 && perUnits < groups) {
-			for (int y = 0; y < groups; y++) {
-
-				if (miniontime <= 0) {
+				
+					Vector3 somevector = transform.position + new Vector3 (-1, 0, 0);
 					for (int x = 0; x < amt; x++) {
 						Debug.Log ("Spawns enemy minions!");
-//						TODO: fix this shit , it breaks unity and the game itself !						
 
-//						Vector3 somevector = transform.position + new Vector3 (Random.Range (-8, -16), 0, 0);
-//						GameObject go = (GameObject)GameObject.Instantiate (Machinary [0], somevector, Quaternion.identity);
-//						go.name = go.name + "_" + x;
-//						Unit u = go.GetComponent<Unit> ();
-//						u.amt = 4;
-//						u.power = 45 * wave + 1;
-//						u.health = 100 * wave + 50;
-//
+
+				GameObject.Instantiate ( units[0] , somevector, Quaternion.identity);
+
 					}
 
 					miniontime = resetminiontime;
-				}
-			
-
 			}
 			wave++;
 			Time = reset_time;
-		}
+
 
 
 	}

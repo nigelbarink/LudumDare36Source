@@ -16,15 +16,12 @@ Side ways strategy.
 Features:
 
 
-- fix spawn point
 - new art
 - 4 bosses 
 - make a health indicator
-- key bind move , selector and camera !!
-- remove attack button ??
 - create more characters 
-- get a background 
-- multi Unit selection 
+- make spawn random places
+- multi Unit selection <== 
 - audio
 - animations
  
@@ -47,4 +44,9 @@ Done :
 - camera follows selected character automatically
 - change selected unit color 
 - make characters attack 
+- fix spawn point
+- remove attack button ??
+- key bind move , selector and camera !!
+- get a background 
+
 

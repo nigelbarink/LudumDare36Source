@@ -5,7 +5,7 @@ using System.Collections;
 public class Movement : MonoBehaviour {
 	public int speed = 3;
 	public GameObject selected;
-	public bool enabled = false;
+	public bool M_enabled = false;
 	public Vector3 cam_pos ;
 	public Text warning ;
 	Ray ray ;
@@ -41,17 +41,31 @@ public class Movement : MonoBehaviour {
 		if (Input.GetKey (KeyCode.X)) {
 			Camera.main.transform.position = cam_pos;
 		}
+
+		if (Input.GetKey (KeyCode.W)) {
+			selected.GetComponent<Unit> ().move ();
+		}
+		if (Input.GetKey (KeyCode.S)) {
+			selected.GetComponent<Unit> ().fallback ();
+		}
+		if (Input.GetKey (KeyCode.C)) {
+			if (selected != Camera.main.gameObject) {
+				selectCamera ();
+			} else {
+				M_enabled = true;
+			}
+		}
 	}
 	void checkselector(){
-		if (Input.GetKey (KeyCode.Escape)&& enabled) {
-			enabled = false;
+		if (Input.GetKey (KeyCode.Escape)&& M_enabled) {
+			M_enabled = false;
 			warning.enabled = false;
 			SpriteRenderer rend = selected.GetComponent<SpriteRenderer> ();
 			if (rend) {
 				rend.color = Color.white;
 			}
 		}
-		if (Input.GetMouseButton (0) && enabled ) {
+		if (Input.GetMouseButton (0) && M_enabled ) {
 
 			ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 
@@ -66,7 +80,7 @@ public class Movement : MonoBehaviour {
 			}
 			Debug.Log ("SELECTED: " + hit.collider.name);
 			selected = hit.collider.gameObject;
-			enabled = false;
+			M_enabled = false;
 			warning.enabled = false;
 			return;
 		}
@@ -104,7 +118,7 @@ public class Movement : MonoBehaviour {
 		}
 
 	public void enableSelector(){
-		enabled = true;
+		M_enabled = true;
 	}
 	public void selectCamera (){
 		SpriteRenderer rend = selected.GetComponent<SpriteRenderer> ();
