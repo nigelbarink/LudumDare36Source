@@ -14,9 +14,9 @@ Defeat enemy with ?_magical_? ancient technology also upgrade your ancient power
 Side ways strategy. 
 
 Features:
-- enemy AI
 - multi Unit selection <== probably one of the next things todo!
 - make spawn random places
+- balance characters (AKA nerf range of units)
 - create more characters 
 - 4 bosses 
 - new art
@@ -47,5 +47,6 @@ Done :
 - key bind move , selector and camera !!
 - get a background 
 - make a health indicator
+- enemy AI
 
 

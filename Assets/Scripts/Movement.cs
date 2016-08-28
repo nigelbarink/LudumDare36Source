@@ -24,7 +24,7 @@ public class Movement : MonoBehaviour {
 		checkselector();
 
 		if (selected != Camera.main.gameObject) {
-			selected.GetComponent<SpriteRenderer> ().color = Color.red;
+//			selected.GetComponent<SpriteRenderer> ().color = Color.red;
 			/*
 			float posc = selected.transform.position.x;
 			Camera.main.transform.position = new Vector3 (posc,Camera.main.transform.position.y,Camera.main.transform.position.z) ;

@@ -57,11 +57,8 @@ public class Manager : MonoBehaviour {
 
 	void Buy_Specified (int num , int amt ){
 			credits -= amt;
-		GameObject go = (GameObject)GameObject.Instantiate (Units [num], new Vector3 (0,0,0), Quaternion.identity);
-		Unit u = go.GetComponent<Unit> ();
-		u.amt = 37 * num + 1 ^ 5 / (num * 2 + 1);
-		u.power = 50 * num + 1;
-		u.health = 100 * num + 100;
+		GameObject.Instantiate (Units [num], new Vector3 (0,0,0), Quaternion.identity);
+
 
 	}
 

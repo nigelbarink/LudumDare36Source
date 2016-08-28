@@ -44,7 +44,7 @@ public class spawnpoint : MonoBehaviour {
 		switch (wave) {
 		case 0:
 			Debug.Log ("Wave 0");
-			spawn_wave (5, 2);
+			spawn_wave (2, 2);
 			break;
 
 		case 1:
@@ -53,19 +53,19 @@ public class spawnpoint : MonoBehaviour {
 			break;
 		case 2:
 			Debug.Log ("Wave 2");
-			spawn_wave (5, 2);
+			spawn_wave (8, 2);
 			break;
 		case 3:
 			Debug.Log ("Wave 3");
-			spawn_wave (5, 2);
+			spawn_wave (6, 2);
 			break;
 		case 4:
 			Debug.Log ("Wave 4");
-			spawn_wave (5, 2);
+			spawn_wave (3, 2);
 			break;
 		case 5:
 			Debug.Log ("Wave 5");
-			spawn_wave (5, 2);
+			spawn_wave (4, 2);
 			break;
 
 		default:

@@ -2,7 +2,7 @@
 using System.Collections;
 [RequireComponent (typeof(healthbar))]
 public class Unit : MonoBehaviour {
-	public int Unit_type = 0; 
+
 	public int amt ;
 	public float health;
 	public float power;
@@ -16,12 +16,12 @@ public class Unit : MonoBehaviour {
 		if (health <= 0) {
 			Destroy (this.gameObject);
 		}
-			
+
 		healthbar gui = GetComponent<healthbar> ();
 		if (gui != null) {
 			gui.update_health ((int)health);
 		}
-		}
+	}
 
 
 	public void move (){
@@ -43,8 +43,8 @@ public class Unit : MonoBehaviour {
 		if (others.Length > 0) {
 			attack ();
 		}
-			Debug.Log ("no Enemies near!");
-	
+		Debug.Log ("no Enemies near!");
+
 	}
 	public void fallback (){
 		amt = -amt;
@@ -64,5 +64,8 @@ public class Unit : MonoBehaviour {
 			return;
 		}
 	}
+
+
+
 
 }
