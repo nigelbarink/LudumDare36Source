@@ -2,7 +2,6 @@
 using System.Collections;
 [RequireComponent (typeof(healthbar))]
 public class Unit_AI : MonoBehaviour {
-	
 	public int amt = 8;
 	public float health;
 	public float power;
@@ -37,7 +36,7 @@ public class Unit_AI : MonoBehaviour {
 			}
 
 		if (health <= 0) {
-			GameObject.Find ("Manager").GetComponent<Manager> ().addExp (20);
+			GameObject.Find ("Manager").GetComponent<Manager> ().addExp ();
 			Destroy (this.gameObject);
 		}
 

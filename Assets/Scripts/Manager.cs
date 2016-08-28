@@ -1,13 +1,24 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Manager : MonoBehaviour {
 
 	public Text txt;
 	public Text tt;
-	int credits = 10;
-	int exp = 0;
+	public GameObject wanr;
+	public int credits = 10;
+	private int exp = 20;
+	int exp_gotten = 10;
+	public int experience {
+		get{ 
+			return exp;
+		}
+		private set { 
+			exp = value;
+		}
+	}
 	public GameObject[] Units;
 	float clock = 4;
 	int minute = 4;
@@ -15,8 +26,8 @@ public class Manager : MonoBehaviour {
 	public void addCred (int amt ){
 		credits += amt;
 	}
-	public void addExp (int amt ){
-		exp += amt;
+	public void addExp (){
+		exp += exp_gotten;
 	}
 	public void removeExp (int amt){
 		exp -= amt;
@@ -53,23 +64,88 @@ public class Manager : MonoBehaviour {
 		switch (num) {
 
 		case 0:
-			if (credits >= 15f){
+			if (HasEnough(15)) {
 				Buy_Specified (num, 15);
+			} 
+			break;
+
+		case 1:
+			if (HasEnough(20)){
+				Buy_Specified (num, 30);
+			}
+
+			break;
+
+		case 2:
+			if (HasEnough(60)){
+				Buy_Specified (num, 60);
+			}
+			break;
+		case 3:
+			if (HasEnough(120)){
+				Buy_Specified (num, 120);
+			}
+			break;
+		case 4:
+			if (HasEnough(210)){
+				Buy_Specified (num, 210);
+			}
+			break;
+		case 5:
+			if (HasEnough(300)){
+				Buy_Specified (num, 300);
+			}
+			break;
+
+		
+		}
+	}
+	public void buy_Upgrade (int num ){
+		List<GameObject> go = Camera.main.gameObject.GetComponent<Movement> ().selected;
+		if (go.Contains (Camera.main.gameObject)){
+			return;
+		}
+		Unit selected = go [0].GetComponent<Unit> ();
+		switch (num) {
+
+		case 0:
+			if (HasEnough(20)){
+				selected.health += 10;
 			}
 			break;
 
 		case 1:
-			if (credits >= 30f){
-				Buy_Specified (num, 30);
+			if (HasEnough(40)){
+				selected.power += 2;
 			}
 			break;
 
-		default:
-			Debug.Log ("The Unit Asked does not excist");
+		case 2:
+			if (HasEnough(60)){
+				//more money per turn 
+				selected.credperturn += 2;
+			}
 			break;
+		case 3:
+			if (HasEnough(30)){
+				// more exp per kill
+				exp_gotten += 2;
+			}
+			break;
+		case 4:
+			if (HasEnough(100)){
+				// heal castle 
+			}
+			break;
+		case 5:
+			if (HasEnough(0)){
+				Destroy (selected.gameObject);
+			}
+			break;
+
+		
 		}
 	}
-
 	void Buy_Specified (int num , int amt ){
 			credits -= amt;
 		Vector3 somevector = new Vector3 ((int)Random.Range(1,5) ,0,0) + this.transform.position ;
@@ -89,12 +165,11 @@ public class Manager : MonoBehaviour {
 		GameObject[] selects = Camera.main.GetComponent<Movement> ().selected.ToArray ();
 		foreach (GameObject select in selects) {
 			Unit  u = select.GetComponent<Unit> ();
+			if (u == null) {
+				Debug.LogError ("Unit is not Active!");
+			}
 			switch (what) {
-
-			case 0:
-				u.attack ();
-				break;
-
+		
 			case 1:
 				u.move ();
 				break;
@@ -112,5 +187,15 @@ public class Manager : MonoBehaviour {
 
 	
 	}
+
+	public bool HasEnough (int cost ){
+		if (credits < cost) {
+			wanr.SetActive (true);
+			return false;
+		} else {
+			return true;
+		}
+	}
+
 
 }

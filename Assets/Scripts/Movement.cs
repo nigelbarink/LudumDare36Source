@@ -9,6 +9,8 @@ public class Movement : MonoBehaviour {
 	public bool M_enabled = false;
 	public Vector3 cam_pos ;
 	public Text warning ;
+	public Text warning2 ;
+	public GameObject panel;
 	Ray ray ;
 	RaycastHit2D hit;
 
@@ -23,7 +25,6 @@ public class Movement : MonoBehaviour {
 	void Update () {
 		//TODO: should we check our input every frame?
 		checkselector();
-
 
 				
 			/*
@@ -90,8 +91,8 @@ public class Movement : MonoBehaviour {
 					selected.Clear ();
 				}
 				selected.Add(Camera.main.gameObject);
-					foreach (GameObject select in selected) {
-						Debug.Log (select.gameObject.name);
+				foreach (GameObject select in selected) {
+						Debug.Log (select.gameObject.name);}
 					}	
 				return;
 				}else if (hit.collider != null && hit.collider.tag == "Player" && hit.collider.gameObject.tag != "Castle" && !selected.Contains (hit.collider.gameObject)){
@@ -109,7 +110,8 @@ public class Movement : MonoBehaviour {
 						}
 					}
 				} 
-				else { Debug.Log ("Error !!!"); return;}
+				else { //Debug.Log ("Error !!!"); return;
+			}
 			}
 
 				if (Input.GetKey (KeyCode.Escape)) {
@@ -125,7 +127,7 @@ public class Movement : MonoBehaviour {
 				}
 
 		}
-	}
+
 	public void enableSelector(){
 		M_enabled = true;
 	}
@@ -143,5 +145,14 @@ public class Movement : MonoBehaviour {
 		}
 		selected.Add (Camera.main.gameObject);
 	}
-	
+	public void CheckSelected(){
+		if (selected.Contains(Camera.main.gameObject) || selected == null ){
+			warning2.gameObject.SetActive(true);
+
+			}else{
+			panel.SetActive (true);
+			// You are good to go !
+		}
+
+	}
 	}

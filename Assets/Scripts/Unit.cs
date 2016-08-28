@@ -4,6 +4,7 @@ using System.Collections;
 public class Unit : MonoBehaviour {
 
 	public int amt ;
+	public int credperturn = 1 ;
 	public float health;
 	public float power;
 	public float range = 8 ;
@@ -33,7 +34,7 @@ public class Unit : MonoBehaviour {
 			}
 		}
 
-		manage.addCred (2);
+		manage.addCred (credperturn);
 
 		if (moving) {
 			transform.position += new Vector3 (amt, 0, 0) * Time.deltaTime;
@@ -56,9 +57,6 @@ public class Unit : MonoBehaviour {
 
 
 	public void move (){
-		if (amt < 0) {
-			amt = -amt;
-		}
 		moving = true;
 	}
 	public void attack (){
