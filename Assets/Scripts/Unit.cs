@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+[RequireComponent (typeof(healthbar))]
 public class Unit : MonoBehaviour {
 	public int Unit_type = 0; 
 	public int amt ;
@@ -16,7 +16,11 @@ public class Unit : MonoBehaviour {
 		if (health <= 0) {
 			Destroy (this.gameObject);
 		}
-
+			
+		healthbar gui = GetComponent<healthbar> ();
+		if (gui != null) {
+			gui.update_health ((int)health);
+		}
 		}
 
 

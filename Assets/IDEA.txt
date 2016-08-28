@@ -14,14 +14,12 @@ Defeat enemy with ?_magical_? ancient technology also upgrade your ancient power
 Side ways strategy. 
 
 Features:
-
-
-- new art
-- 4 bosses 
-- make a health indicator
-- create more characters 
+- enemy AI
+- multi Unit selection <== probably one of the next things todo!
 - make spawn random places
-- multi Unit selection <== 
+- create more characters 
+- 4 bosses 
+- new art
 - audio
 - animations
  
@@ -48,5 +46,6 @@ Done :
 - remove attack button ??
 - key bind move , selector and camera !!
 - get a background 
+- make a health indicator
 
 
