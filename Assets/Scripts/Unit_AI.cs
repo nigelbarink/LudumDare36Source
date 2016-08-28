@@ -6,7 +6,7 @@ public class Unit_AI : MonoBehaviour {
 	public float health;
 	public float power;
 	public float range = 8 ;
-
+	public GameObject spawn;
 
 	public void Update(){
 		Collider2D [] others = Physics2D.OverlapCircleAll (transform.position + new Vector3 (0,0,1) ,range , 1 << LayerMask.NameToLayer("Player"));
@@ -37,12 +37,14 @@ public class Unit_AI : MonoBehaviour {
 
 		if (health <= 0) {
 			GameObject.Find ("Manager").GetComponent<Manager> ().addExp ();
+			spawn.GetComponent<spawnpoint> ().Enemy.Remove (this.gameObject);
 			Destroy (this.gameObject);
 		}
 
 		healthbar gui = GetComponent<healthbar> ();
 		if (gui != null) {
 			gui.update_health ((int)health);
+
 		}
 	}
 

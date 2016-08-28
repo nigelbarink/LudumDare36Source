@@ -70,7 +70,7 @@ public class Manager : MonoBehaviour {
 			break;
 
 		case 1:
-			if (HasEnough(20)){
+			if (HasEnough(30)){
 				Buy_Specified (num, 30);
 			}
 

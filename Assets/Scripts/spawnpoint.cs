@@ -8,9 +8,9 @@ public class spawnpoint : MonoBehaviour {
 	int boss = 1 ;
 	public GameObject winscreen ;
 	public GameObject[] units ;
-
+	public List<GameObject> Enemy; 
 	// big time
-	float Time = 4; // DEFAULT to 60
+	float Time = 10; // DEFAULT to 60
 	float reset_time = 30;
 
 	//minion time
@@ -94,8 +94,9 @@ public class spawnpoint : MonoBehaviour {
 						Debug.Log ("Spawns enemy minions!");
 
 
-				GameObject.Instantiate ( units[TYPE] , somevector, Quaternion.identity);
-
+				GameObject go = (GameObject)GameObject.Instantiate ( units[TYPE] , somevector, Quaternion.identity);
+				Enemy.Add (go);
+				go.GetComponent<Unit_AI> ().spawn = this.gameObject;
 					}
 			if (LAST) {
 				miniontime = resetminiontime;
