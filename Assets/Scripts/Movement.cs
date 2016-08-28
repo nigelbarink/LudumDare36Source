@@ -93,10 +93,16 @@ public class Movement : MonoBehaviour {
 						Debug.Log (select.gameObject.name);
 					}	
 				return;
-				}else if (hit.collider != null && hit.collider.tag == "Player" && hit.collider.gameObject.tag != "Castle"){
-			Debug.Log ("SELECTED: " + hit.collider.name);
-			selected.Add(hit.collider.gameObject);
-				if (! selected.Contains ( Camera.main.gameObject)) {
+				}else if (hit.collider != null && hit.collider.tag == "Player" && hit.collider.gameObject.tag != "Castle" && !selected.Contains (hit.collider.gameObject)){
+					if (selected.Contains (Camera.main.gameObject)) {
+						selected.Remove (Camera.main.gameObject);
+					}
+					Debug.Log ("SELECTED: " + hit.collider.name);
+
+					selected.Add(hit.collider.gameObject);
+				
+					if (! selected.Contains ( Camera.main.gameObject)) {
+					
 						foreach (GameObject	select in selected) {
 							select.GetComponentInChildren<SpriteRenderer> ().color = Color.red;
 						}
