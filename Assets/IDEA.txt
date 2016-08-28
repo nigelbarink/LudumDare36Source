@@ -14,7 +14,7 @@ Defeat enemy with ?_magical_? ancient technology also upgrade your ancient power
 Side ways strategy. 
 
 Features:
-- multi Unit selection <== probably one of the next things todo!
+- make individual units recognisable
 - make spawn random places
 - balance characters (AKA nerf range of units)
 - create more characters 
@@ -48,5 +48,6 @@ Done :
 - get a background 
 - make a health indicator
 - enemy AI
+- multi Unit selection <== probably one of the next things todo!
 
 

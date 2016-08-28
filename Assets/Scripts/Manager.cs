@@ -62,4 +62,39 @@ public class Manager : MonoBehaviour {
 
 	}
 
+	public void doAction (int what){
+		// TODO: take action for the selected character ! 
+		if (Camera.main.GetComponent<Movement>().selected.Contains ( Camera.main.gameObject)){
+			// we are the camera, we cannot not take action.
+			// return immediatly 
+			Debug.LogError("camera cannot attack any units, please select a real unit !");
+			return;
+		}
+		GameObject[] selects = Camera.main.GetComponent<Movement> ().selected.ToArray ();
+		foreach (GameObject select in selects) {
+			Unit  u = select.GetComponent<Unit> ();
+			switch (what) {
+
+			case 0:
+				u.attack ();
+				break;
+
+			case 1:
+				u.move ();
+				break;
+
+			case 2:
+				u.fallback ();
+				break;
+
+			default:
+				Debug.LogError ("This action doesnt excist yet!");
+				break;
+			}
+
+		}
+
+	
+	}
+
 }

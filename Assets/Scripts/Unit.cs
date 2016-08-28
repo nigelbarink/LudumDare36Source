@@ -14,6 +14,10 @@ public class Unit : MonoBehaviour {
 			transform.position += new Vector3 (amt, 0, 0) * Time.deltaTime;
 		}
 		if (health <= 0) {
+			Movement m = Camera.main.GetComponent<Movement> ();
+			if (m.selected.Contains(this.gameObject)){
+				m.selected.Remove (this.gameObject);
+			} 
 			Destroy (this.gameObject);
 		}
 
