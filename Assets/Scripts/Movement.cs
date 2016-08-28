@@ -91,8 +91,8 @@ public class Movement : MonoBehaviour {
 					selected.Clear ();
 				}
 				selected.Add(Camera.main.gameObject);
-				foreach (GameObject select in selected) {
-						Debug.Log (select.gameObject.name);}
+//				foreach (GameObject select in selected) {
+//						Debug.Log (select.gameObject.name);}
 					}	
 				return;
 				}else if (hit.collider != null && hit.collider.tag == "Player" && hit.collider.gameObject.tag != "Castle" && !selected.Contains (hit.collider.gameObject)){

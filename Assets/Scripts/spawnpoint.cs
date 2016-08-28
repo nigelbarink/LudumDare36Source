@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
 public class spawnpoint : MonoBehaviour {
 	int wave = 0 ;
 	int boss = 1 ;
-
+	public GameObject winscreen ;
 	public GameObject[] units ;
 
 	// big time
@@ -43,31 +44,37 @@ public class spawnpoint : MonoBehaviour {
 		switch (wave) {
 		case 0:
 			Debug.Log ("Wave 0");
-			spawn_wave (1, 1);
-			spawn_wave (2, 0, true);
+			spawn_wave (2,0, true);
 			break;
 
 		case 1:
 			Debug.Log ("Wave 1");
-			spawn_wave (3, 0);
-			spawn_wave (2, 1, true);
+			spawn_wave (2, 0);
+			spawn_wave (1, 1, true);
 			break;
 		case 2:
 			Debug.Log ("Wave 2");
-			spawn_wave (4, 0);
-			spawn_wave (3, 2, true);
+			spawn_wave (2, 1);
+			spawn_wave (1, 3);
+			spawn_wave (1, 2, true);
 			break;
 		case 3:
 			Debug.Log ("Wave 3");
-			spawn_wave (6, 2);
+			spawn_wave (1, 1);
+			spawn_wave (2, 2 , true);
 			break;
 		case 4:
 			Debug.Log ("Wave 4");
-			spawn_wave (3, 2);
+			spawn_wave (2, 2);
+			spawn_wave (1, 4, true);
 			break;
 		case 5:
 			Debug.Log ("Wave 5");
-			spawn_wave (4, 2);
+			spawn_wave (2, 1);
+			spawn_wave (1, 2);
+			spawn_wave (1, 3);
+			spawn_wave (1, 4);
+			spawn_wave (1, 5, true);
 			break;
 
 		default:
@@ -106,8 +113,7 @@ public class spawnpoint : MonoBehaviour {
 
 
 	void spawnboss (int boss ){
-		//Debug.Log ("spawns boss!");
-		Time = reset_time;
-		boss++;
+		//You win , Since there is no time for a implementation of a boss fight !
+		winscreen.SetActive(true);
 	}
 }

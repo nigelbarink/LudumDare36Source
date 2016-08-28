@@ -1,15 +1,23 @@
 fileFormatVersion: 2
 guid: e1c58bbd17093b34b938b7993f415e39
-timeCreated: 1472383671
+timeCreated: 1472415319
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Album_0
-    21300002: Album_1
-    21300004: Album_2
-    21300006: Album_3
-    21300008: Album_4
-    21300010: Album_5
+    21300000: Tower
+    21300002: Tower (E)
+    21300004: knight
+    21300006: Knight (E)
+    21300008: Animal
+    21300010: Animal (E)
+    21300012: Ancient Soldier
+    21300014: Ancient Soldier (E)
+    21300016: Catapult
+    21300018: Catapult (E)
+    21300020: Modern Soldier
+    21300022: Modern Soldier (E)
+    21300024: Tanks
+    21300026: Tanks (E)
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -59,7 +67,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Album_0
+      name: Tower
       rect:
         serializedVersion: 2
         x: 1
@@ -72,7 +80,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Album_1
+      name: Tower (E)
       rect:
         serializedVersion: 2
         x: 23
@@ -85,38 +93,142 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Album_2
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 355
-        width: 9
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Album_3
-      rect:
-        serializedVersion: 2
-        x: 15
-        y: 355
-        width: 9
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Album_4
+      name: knight
       rect:
         serializedVersion: 2
         x: 3
+        y: 355
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Knight (E)
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 355
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Animal
+      rect:
+        serializedVersion: 2
+        x: 2
         y: 345
-        width: 10
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Animal (E)
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 345
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ancient Soldier
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 327
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ancient Soldier (E)
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 327
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Catapult
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 310
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Catapult (E)
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 310
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Modern Soldier
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 285
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Modern Soldier (E)
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 285
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tanks
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 270
+        width: 23
         height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -124,12 +236,12 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Album_5
+      name: Tanks (E)
       rect:
         serializedVersion: 2
-        x: 14
-        y: 345
-        width: 10
+        x: 31
+        y: 269
+        width: 23
         height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}

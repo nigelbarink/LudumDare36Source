@@ -14,14 +14,9 @@ Defeat enemy with ?_magical_? ancient technology also upgrade your ancient power
 Side ways strategy. 
 
 Features:
-- experience 
-- create more characters 
-- balance characters (AKA nerf range of units)
-- 1 boss (Atleast) 
-- new art
-- audio
-- animations
- 
+
+
+
 
  
 Controls :
@@ -35,7 +30,11 @@ escape => exit out of selector
 
 Scrap Idea :
 - Capture Area's
-
+- experience 
+- 1 boss (Atleast) 
+- animations
+- Upgrades
+- audio
 
 
 
@@ -46,7 +45,6 @@ Done :
 - enemy waves
 - shop 
 - movement "character"
-- Upgrades
 - camera follows selected character automatically
 - change selected unit color 
 - make characters attack 
@@ -59,3 +57,6 @@ Done :
 - multi Unit selection <== probably one of the next things todo!
 - make individual units recognisable
 - make spawn random places
+- new art
+- create more characters \- balance characters (AKA nerf range of units)
+ 
